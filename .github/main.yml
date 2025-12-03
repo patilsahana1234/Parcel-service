@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "Checking if the app is running..."
           IP_ADDRESS=$(curl -s ifconfig.me) # Fetch public IP address
-          PORT=8080
+          PORT=9090
           RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null http://$IP_ADDRESS:$PORT)
           if [ "$RESPONSE" -eq 200 ]; then
             echo "The app is running successfully at http://$IP_ADDRESS:$PORT!"
