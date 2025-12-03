@@ -1,6 +1,6 @@
 pipeline {
-   // agent { label 'java' }
-     agent any
+   agent { label 'java' }
+     // agent any
     tools {
         jdk 'JDK17'
         maven 'maven'
