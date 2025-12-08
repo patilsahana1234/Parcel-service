@@ -1,3 +1,4 @@
+@Library('pipeline_library') _
 pipeline {
    agent { label 'java' }
      // agent any
@@ -17,7 +18,9 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests=false'
+              script {
+                        build('package')  
+                }
             }
         }
 
